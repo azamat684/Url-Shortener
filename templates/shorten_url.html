@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+
+</head>
+
+<body>
+    <center>
+        <a class="title" href="{% url 'shorten_url' %}" style="text-decoration: none;"> <!-- shorten_url manziliga yo'nlash -->
+            <h1>URL Shortener</h1>
+        </a>
+        <br />
+        <form method="post" action="{% url 'shorten_url' %}">
+            {% csrf_token %}
+            <div>
+                <input type="url" name="long_url" id="long_url" placeholder="enter a url" required />
+                <input type="text" name="slug" placeholder="enter a slug" style="margin-top: 10px;" />
+            </div>
+            <br />
+            <button type="submit">Shorten URL</button> <!-- Bosilganda "Loading..." xabarni ko'rsatish -->
+        </form>
+        <br />
+        <a href="https://t.me/azamatcoders">Telegram</a>
+        <span> | </span>
+        <a href="https://instagram.com/azamat_dosmukhambetov">Instagram</a>
+        <br />
+        <div id="response"></div> <!-- Xabarni ko'rsatish uchun div -->
+    </center>
+</body>
+</html>
