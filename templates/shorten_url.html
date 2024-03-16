@@ -12,6 +12,8 @@
 </head>
 
 <body>
+    {% load socialaccount %}
+    <h2><a href="{% provider_login_url 'google' %}?next=/">Login via google</a></h2>
     <center>
         <a class="title" href="{% url 'shorten_url' %}" style="text-decoration: none;"> <!-- shorten_url manziliga yo'nlash -->
             <h1>URL Shortener</h1>
@@ -24,14 +26,14 @@
                 <input type="text" name="slug" placeholder="enter a slug" style="margin-top: 10px;" />
             </div>
             <br />
-            <button type="submit">Shorten URL</button> <!-- Bosilganda "Loading..." xabarni ko'rsatish -->
+            <button type="submit">Shorten URL</button>
         </form>
         <br />
         <a href="https://t.me/azamatcoders">Telegram</a>
         <span> | </span>
         <a href="https://instagram.com/azamat_dosmukhambetov">Instagram</a>
         <br />
-        <div id="response"></div> <!-- Xabarni ko'rsatish uchun div -->
+        <div id="response"></div> 
     </center>
 </body>
 </html>
